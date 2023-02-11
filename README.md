@@ -1,10 +1,10 @@
 # Eesti ID-tarkvara konteineris
 
-Ehita `mkosi` abil Ubuntu 22.04 konteiner, mille sees on `firefox-esr` ja `qdigidoc4`.
-
-Et kõik järnev töötaks, peab olema täidetud hunnik tingimusi, aga minul *Debian Sid*i peal töötab.
-
-Jõudu tööle!
+Ehita `mkosi` abil Ubuntu 22.04 konteiner ([systemd-nspawn](https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html)
+jaoks), mille sees on `firefox-esr`, `qdigidoc4` ja muu vajalik, et ID-kaart
+pildi ette võtaks. Et kõik järnev töötaks, peab olema täidetud hunnik tingimusi
+ja esimese hooga ei pruugi õnnestuda, aga minul *Debian Sid*i peal töötab.
+Soovitan enne käivitamist koodi uurida. Jõudu tööle!
 
 ## Sõltuvused
 
