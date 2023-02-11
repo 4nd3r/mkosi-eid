@@ -5,35 +5,9 @@ then
     exit 0
 fi
 
-if [ -z "$SUDO_UID" ] || [ -z "$SUDO_GID" ] || [ -z "$SUDO_USER" ]
-then
-    echo ':-(' >&2
-    exit 1
-fi
-
-_HOME="$( awk -v user="$SUDO_USER" -F: '$1 == user {print $6}' /etc/passwd )"
-
-chroot "$BUILDROOT" useradd \
-    --uid "$SUDO_UID" \
-    --gid "$SUDO_GID" \
-    --create-home \
-    --home-dir "$_HOME" \
-    --shell /bin/bash \
-    "$SUDO_USER"
-
-DIGIDOC_CONFIG_DIRECTORY="$_HOME/.config/RIA"
-
-chroot "$BUILDROOT" mkdir -p "$DIGIDOC_CONFIG_DIRECTORY"
-
-chroot "$BUILDROOT" tee "$DIGIDOC_CONFIG_DIRECTORY/qdigidoc4.conf" << EOF
-[General]
-showIntro=false
-EOF
-
-chroot "$BUILDROOT" chown -R "$SUDO_UID:$SUDO_GID" "$_HOME"
-
 cat > mkosi.output/image.nspawn << EOF
 [Files]
+Bind=/dev/dri
 Bind=$_HOME/Desktop
 Bind=$_HOME/Documents
 Bind=$_HOME/Downloads

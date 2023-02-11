@@ -1,0 +1,36 @@
+#!/bin/sh -e
+
+if [ "$1" != 'final' ]
+then
+    exit 0
+fi
+
+if ! grep -Eq "^$_GROUP:" /etc/group
+then
+    groupadd --gid "$_GID" "$_GROUP"
+fi
+
+useradd \
+    --uid "$_UID" \
+    --gid "$_GID" \
+    --password "$( awk -F: '$1 == "root" {print $2}' /etc/shadow )" \
+    --create-home \
+    --home-dir "$_HOME" \
+    --shell /bin/bash \
+    --groups sudo,video \
+    "$_USER"
+
+passwd --delete root
+
+systemctl enable systemd-networkd.service
+
+RIA_CONFIG_DIRECTORY="$_HOME/.config/RIA"
+
+mkdir -p "$RIA_CONFIG_DIRECTORY"
+
+cat > "$RIA_CONFIG_DIRECTORY/qdigidoc4.conf" << EOF
+[General]
+showIntro=false
+EOF
+
+chown -R "$_UID:$_GID" "$_HOME"
