@@ -22,8 +22,6 @@ install:
 	sudo machinectl start ${_HOST}
 
 uninstall:
-	sudo machinectl terminate ${_HOST} || true
-	sleep 3
-	sudo machinectl remove ${_HOST} || true
+	if machinectl status ${_HOST} > /dev/null 2>&1; then sudo machinectl terminate ${_HOST}; sleep 3; sudo machinectl remove ${_HOST}; fi
 	sudo rm -f /etc/systemd/nspawn/${_HOST}.nspawn
 	sudo rmdir --ignore-fail-on-non-empty /etc/systemd/nspawn /var/lib/machines

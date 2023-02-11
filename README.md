@@ -12,7 +12,7 @@ Soovitan enne käivitamist koodi uurida. Jõudu tööle!
 `apt`,
 `bubblewrap`,
 `debootstrap`,
-`pulseaudio | pipewire-pulse`,
+`pcscd`,
 `sudo`,
 `systemd-container`,
 `uidmap`,
