@@ -28,6 +28,7 @@ Töötab ainult **X**iga, ei oska midagi arvata moodsamatest lahendustest.
 $ git clone https://github.com/4nd3r/mkosi-eid
 $ cd mkosi-eid
 $ make
+$ sudo make install
 ```
 
 ## Kasutamine
