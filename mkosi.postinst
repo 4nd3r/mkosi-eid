@@ -5,6 +5,8 @@ then
     exit 0
 fi
 
+systemctl enable systemd-networkd.service
+
 if ! grep -Eq "^$_GROUP:" /etc/group
 then
     groupadd --gid "$_GID" "$_GROUP"
@@ -18,8 +20,6 @@ useradd \
     --shell /bin/bash \
     --groups sudo,video \
     "$_USER"
-
-systemctl enable systemd-networkd.service
 
 RIA_CONFIG_DIRECTORY="$_HOME/.config/RIA"
 
