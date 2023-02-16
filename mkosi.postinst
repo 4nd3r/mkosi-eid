@@ -18,7 +18,7 @@ useradd \
     --create-home \
     --home-dir "$_HOME" \
     --shell /bin/bash \
-    --groups sudo,video \
+    --groups sudo \
     "$_USER"
 
 RIA_CONFIG_DIRECTORY="$_HOME/.config/RIA"
