@@ -1,7 +1,7 @@
 # Eesti ID-tarkvara konteineris
 
 Ehita `mkosi` abil [nspawn konteiner](https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html),
-mille sees on Ubuntu 22.04, `open-eid`, `qdigidoc4`, `firefox-esr` ja muu
+mille sees on Ubuntu 22.04, `opensc-tool`, `qdigidoc4`, `firefox-esr` ja muu
 vajalik, et ID-kaart pildi ette võtaks. Et kõik järgnev töötaks, peab olema
 täidetud hunnik tingimusi ja esimese hooga ei pruugi õnnestuda, aga minul
 *Debian Sid*i peal töötab. Soovitan enne käivitamist koodi uurida. Jõudu
@@ -9,7 +9,7 @@ tööle!
 
 ## Sõltuvused
 
-[`mkosi` v16](https://github.com/systemd/mkosi/releases/tag/v16) ja
+[`mkosi` v18](https://github.com/systemd/mkosi/releases/tag/v18) ja
 `apt`,
 `bubblewrap`,
 `debootstrap`,
