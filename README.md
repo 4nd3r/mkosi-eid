@@ -9,7 +9,7 @@ tööle!
 
 ## Sõltuvused
 
-[`mkosi` v18](https://github.com/systemd/mkosi/releases/tag/v18) ja
+[`mkosi` v19](https://github.com/systemd/mkosi/tree/v19) ja
 `apt`,
 `bubblewrap`,
 `debootstrap`,
