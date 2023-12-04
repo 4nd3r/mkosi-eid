@@ -13,7 +13,7 @@ tööle!
 `apt`,
 `bubblewrap`,
 `debootstrap`,
-`pcscd`,
+`pcscd` (`--disable-polkit`),
 `sudo`,
 `systemd-container`,
 `uidmap`,
