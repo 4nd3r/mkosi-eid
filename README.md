@@ -11,7 +11,6 @@ Vajalikud on järgmised sõltuvused:
 [`mkosi` v22](https://github.com/systemd/mkosi/tree/v22),
 `apt`,
 `bubblewrap`,
-`debootstrap`,
 `pcscd` (`--disable-polkit`),
 `sudo`,
 `systemd-container`,
