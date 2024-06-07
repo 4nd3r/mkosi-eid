@@ -7,9 +7,8 @@ täidetud hunnik tingimusi ja esimese hooga ei pruugi õnnestuda, aga minul
 *Debian Sid*i peal töötab. Soovitan enne käivitamist koodi uurida. Jõudu
 tööle!
 
-## Sõltuvused
-
-[`mkosi` v19](https://github.com/systemd/mkosi/tree/v19) ja
+Vajalikud on järgmised sõltuvused:
+[`mkosi` v22](https://github.com/systemd/mkosi/tree/v22),
 `apt`,
 `bubblewrap`,
 `debootstrap`,
@@ -17,22 +16,14 @@ tööle!
 `sudo`,
 `systemd-container`,
 `uidmap`,
-`xorg`,
-...
+`xorg`
+ja ilmselt midagi veel.
 
 Töötab ainult **X**iga, ei oska midagi arvata moodsamatest lahendustest.
 
-## Ehitamine
-
+Kasutama peaks umbes nii:
 ```
-$ git clone https://github.com/4nd3r/mkosi-eid
-$ cd mkosi-eid
-$ make
-$ sudo make install
-```
-
-## Kasutamine
-
-```
-$ sudo machinectl shell $USER@eid
+make
+sudo make install
+machinectl shell $USER@eid
 ```

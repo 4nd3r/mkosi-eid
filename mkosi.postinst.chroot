@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-if ! grep -Eq "^$_GROUP:" /etc/group
+if ! getent group "$_GROUP" > /dev/null
 then
     groupadd --gid "$_GID" "$_GROUP"
 fi
@@ -12,14 +12,3 @@ useradd \
     --home-dir "$_HOME" \
     --shell /bin/bash \
     "$_USER"
-
-RIA_CONFIG_DIRECTORY="$_HOME/.config/RIA"
-
-mkdir -p "$RIA_CONFIG_DIRECTORY"
-
-cat > "$RIA_CONFIG_DIRECTORY/qdigidoc4.conf" << EOF
-[General]
-showIntro=false
-EOF
-
-chown -R "$_UID:$_GID" "$_HOME"
