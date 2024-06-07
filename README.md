@@ -14,6 +14,7 @@ Vajalikud on järgmised sõltuvused:
 `pcscd` (`--disable-polkit`),
 `sudo`,
 `systemd-container`,
+`ubuntu-keyring`,
 `uidmap`,
 `xorg`
 ja ilmselt midagi veel.
